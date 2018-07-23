@@ -53,8 +53,7 @@ class AsyncApp extends Component {
                 <p>
                     {lastUpdated &&
                         <span>
-                            Last updated at {new Date(lastUpdated).toLocaleTimeString()}.
-              {' '}
+                            Last updated at {new Date(lastUpdated).toLocaleTimeString()}.{' '}
                         </span>}
                     {!isFetching &&
                         <button onClick={this.handleRefreshClick}>
@@ -82,14 +81,7 @@ AsyncApp.propTypes = {
 
 function mapStateToProps(state) {
     const { selectedSubreddit, postsBySubreddit } = state
-    const {
-    isFetching,
-        lastUpdated,
-        items: posts
-  } = postsBySubreddit[selectedSubreddit] || {
-            isFetching: true,
-            items: []
-        }
+    const { isFetching, lastUpdated, items: posts  } = postsBySubreddit[selectedSubreddit] || { isFetching: true, items: [] }
 
     return {
         selectedSubreddit,

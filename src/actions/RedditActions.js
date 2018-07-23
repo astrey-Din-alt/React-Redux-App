@@ -22,7 +22,6 @@ export function requestPosts(subreddit) {
 }
 
 export function receivePosts(subreddit, json) {
-	debugger;
 	return {
 		type: RECEIVE_POSTS,
 		subreddit,
